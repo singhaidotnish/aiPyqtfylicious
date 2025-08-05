@@ -1,5 +1,6 @@
 import sys
 import openai
+from openai import OpenAI
 import os
 from dotenv import load_dotenv
 from PyQt5.QtWidgets import (
@@ -9,7 +10,7 @@ from PyQt5.QtWidgets import (
 
 # Load from .env
 load_dotenv()
-
+client = OpenAI()  # 👈 this was missing in your version
 # Set the API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -44,13 +45,11 @@ class AIChatBot(QWidget):
         self.answer_box.setText("Thinking...")
 
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "user", "content": question}
-                ]
+                messages=[{"role": "user", "content": question}]
             )
-            answer = response['choices'][0]['message']['content'].strip()
+            answer = response.choices[0].message.content.strip()
         except Exception as e:
             answer = f"Error: {e}"
 
