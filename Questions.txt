@@ -1,0 +1,44 @@
+Why small models + sampling can wander
+
+Small capacity:
+DistilGPT2 (your current model) has far fewer parameters than GPT-2 or GPT-3. That means it doesn’t encode knowledge as robustly. Its probability distribution over the next token is flatter (less confident).
+
+
+show example of what parameters GPT-2 or GPT-3 has ?
+what means encoding knowledge in context of model ?
+
+what is probability distribution ?
+what does probability distribution mean over the next token ?
+what does next token is flatter mean ?
+
+
+what means Sampling randomness ?
+Temperature is used in what context here ?
+sampling means getting variety of outcomes . CMIIAW ?
+When you use temperature > 0 and do_sample=True, generation isn’t deterministic. 
+
+what does it mean with the same prompt ?. 
+The model samples from its distribution, so even with the same prompt, you can get very different continuations.
+
+
+Example: Paris is the capital of → the distribution might give
+
+“France” with prob 0.4
+
+“the United States” with prob 0.2
+
+“Spain” with prob 0.05
+
+
+How does it calculate probability 0.4 for "France" , 0.2 for "United States", 0.05 for "Spain" ?
+
+Do we always have one BASE and one TWEAKED outcome ?
+
+What is determinism ?
+What is low-entropy ?
+What is ablations ?
+What is c_proj ?
+what is attention head ?
+what is sampling noise ?
+what is Randomness in token choice ?
+Is ablation always used in getting output from model ?	
