@@ -14,12 +14,19 @@ def ablate_head(layer: int = 0, head_idx: int = 0):
 
     return model.transformer.h[layer].attn.c_proj.register_forward_hook(hook)
 
+
+def noop_hook():
+    def _noop(m, i, o): return o
+    return model.transformer.h[0].attn.c_proj.register_forward_hook(_noop)
+
+
 def main(cfg_dict: dict):
     prompt = cfg_dict["prompts"]["capital"]
     # compare() returns (base, tweaked)
     base, tweaked = compare(
         prompt,
-        hook_ctx_fn=lambda: ablate_head(layer=0, head_idx=0),
+        # hook_ctx_fn=lambda: ablate_head(layer=0, head_idx=0),
+        hook_ctx_fn=noop_hook,
         cfg_dict=cfg_dict,
     )
     print("BASE   :", base)

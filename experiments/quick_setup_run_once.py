@@ -11,11 +11,12 @@ def gen(text: str, cfg_dict: dict | None = None, **overrides):
     if not isinstance(cfg_dict, dict):
         cfg_dict = {}
 
-    max_new_tokens = overrides.get("max_new_tokens", cfg_dict.get("max_new_tokens", 40))
-    temperature    = overrides.get("temperature",    cfg_dict.get("temperature", 0.7))
-    top_k          = overrides.get("top_k",          cfg_dict.get("top_k", 0))
-    top_p          = overrides.get("top_p",          cfg_dict.get("top_p", 1.0))
-    do_sample      = overrides.get("do_sample",      cfg_dict.get("do_sample", True))
+    max_new_tokens = int(overrides.get("max_new_tokens", cfg_dict.get("max_new_tokens", 40)))
+    temperature    = float(overrides.get("temperature",    cfg_dict.get("temperature", 0.2)))  # lower
+    top_k          = int(overrides.get("top_k",            cfg_dict.get("top_k", 0)))           # 0 = no top-k
+    top_p          = float(overrides.get("top_p",          cfg_dict.get("top_p", 1.0)))
+    do_sample      = bool(overrides.get("do_sample",       cfg_dict.get("do_sample", False)))   # deterministic
+
 
     # hard-cast
     max_new_tokens = int(max_new_tokens)

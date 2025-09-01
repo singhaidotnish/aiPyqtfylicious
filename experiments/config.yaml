@@ -1,9 +1,10 @@
 model_name: distilgpt2
 seed: 42
 max_new_tokens: 40
-temperature: 0.7
+temperature: 0.2
 top_k: 0
 top_p: 1.0
+do_sample: false
 prompts:
   capital: "Paris is the capital of"
   poem: "Write a 3 line poem about monsoon in Mumbai."
