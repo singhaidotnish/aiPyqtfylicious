@@ -1,0 +1,12 @@
+model_name: distilgpt2
+seed: 42
+max_new_tokens: 40
+temperature: 0.7
+top_k: 0
+top_p: 1.0
+prompts:
+  capital: "Paris is the capital of"
+  poem: "Write a 3 line poem about monsoon in Mumbai."
+plots:
+  cmap: coolwarm
+  clip: [ -0.5, 0.5 ]

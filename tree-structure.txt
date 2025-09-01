@@ -1,0 +1,43 @@
+.
+├── ai_pyqt_tool.py
+├── AI_Tool_Lineup_Aug10
+│   ├── Extras_Readme_Visuals
+│   │   ├── ai_tool_roadmap.drawio
+│   │   └── README.md
+│   ├── README.md
+│   ├── Week1_AI_Chatbot_PyQt
+│   │   └── README.md
+│   ├── Week2_VoiceToAI_PyQt
+│   │   └── README.md
+│   ├── Week3_ImagePromptTool
+│   │   └── README.md
+│   └── Week4_DataSummarizer_AI
+│       └── README.md
+├── experiments
+│   ├── 01_visualize_a_weight_matrix.py
+│   ├── 02_head_ablation.py
+│   ├── 03_scale_one_attention_head.py
+│   ├── 04_nudge_one_mlp_neuron.py
+│   ├── 05_zero_a_slice_of_token_embeddings.py
+│   ├── 06_activation_patching.py
+│   ├── 07_add_small_gaussian_noise_to_residual_stream.py
+│   ├── 08_boost_positional_encodings.py
+│   ├── 09_compare_temperature.py
+│   ├── 10_force_copy_attention_pattern.py
+│   ├── 11_logit_lens_peek.py
+│   ├── 12_style_bias.py
+│   ├── config.yaml
+│   └── quick_setup_run_once.py
+├── README.md
+├── requirements.lock
+├── requirements.txt
+├── runs
+├── tests
+│   └── test_01.py
+├── tree-structure.txt
+└── utils
+    ├── cli.py
+    └── __pycache__
+        └── cli.cpython-310.pyc
+
+11 directories, 29 files
